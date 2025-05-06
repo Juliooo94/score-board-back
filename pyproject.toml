@@ -12,6 +12,8 @@ django = "^5.2"
 djangorestframework = "^3.16"
 psycopg = {extras = ["binary"], version = "*"}
 gunicorn = "^23.0" 
+django-cors-headers = "^4.7.0"
+django-environ = "^0.12.0"
 
 [build-system]
 requires = ["poetry-core"]
