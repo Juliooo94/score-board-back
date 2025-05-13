@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
-    "game",
+    "score_board.game",
+    "score_board.game_session",
+    "score_board.user",
 ]
 
 MIDDLEWARE = [
@@ -115,6 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'user.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
