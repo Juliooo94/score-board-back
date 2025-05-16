@@ -25,6 +25,7 @@ env = environ.Env(
     DB_NAME=(str, 'scoreboard'),
     DB_USER=(str, 'scoreboard'),
     DB_PASSWORD=(str, 'scoreboard'),
+    SECRET_KEY=(str, 'django-insecure-5jwn5l2z6)u18+rt1*1=cm5=zzztq20j1bvdochm_)zo0vl4w6'),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-5jwn5l2z6)u18+rt1*1=cm5=zzztq20j1bvdochm_)zo0vl4w6"
+SECRET_KEY = env("SECRET_KEY")
 
 ALLOWED_HOSTS = []
 
@@ -156,9 +157,9 @@ ALLOWED_HOSTS = [
     "score-board-back.onrender.com",
 ]
 
-logger.info(env("DEBUG"))
+logger.warning(env("DEBUG"))
 SESSION_COOKIE_SECURE = not env("DEBUG")
-SESSION_COOKIE_SAMESITE = 'Lax'
-CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = not env("DEBUG")
 CORS_ALLOW_CREDENTIALS = True
