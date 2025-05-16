@@ -188,9 +188,12 @@ ALLOWED_HOSTS = [
     "score-board-back.onrender.com",
 ]
 
-logger.warning(DEBUG)
+logger.info(DEBUG)
+logger.info(not DEBUG)
 SESSION_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = not DEBUG
 CORS_ALLOW_CREDENTIALS = True
+if not DEBUG:
+    SESSION_COOKIE_DOMAIN = '.onrender.com'
