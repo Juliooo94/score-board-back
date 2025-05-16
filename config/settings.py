@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import environ
+import logging
 from pathlib import Path
+
+
+logger = logging.getLogger(__name__)
+
 
 # Set environment variable for the application
 env = environ.Env(
@@ -31,9 +36,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-5jwn5l2z6)u18+rt1*1=cm5=zzztq20j1bvdochm_)zo0vl4w6"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -154,6 +156,7 @@ ALLOWED_HOSTS = [
     "score-board-back.onrender.com",
 ]
 
+logger.info(env("DEBUG"))
 SESSION_COOKIE_SECURE = not env("DEBUG")
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
