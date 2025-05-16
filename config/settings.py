@@ -118,7 +118,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'user.User'
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -150,3 +153,9 @@ ALLOWED_HOSTS = [
     "localhost",
     "score-board-back.onrender.com",
 ]
+
+SESSION_COOKIE_SECURE = not env("DEBUG")
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SECURE = not env("DEBUG")
+CORS_ALLOW_CREDENTIALS = True

@@ -15,6 +15,10 @@ gunicorn = "^23.0"
 django-cors-headers = "^4.7.0"
 django-environ = "^0.12.0"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-django = "^4.11.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
