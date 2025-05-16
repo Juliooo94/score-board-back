@@ -195,8 +195,6 @@ CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = not DEBUG
 CORS_ALLOW_CREDENTIALS = True
 if not DEBUG:
-    SESSION_COOKIE_DOMAIN = '.onrender.com'
-    CSRF_COOKIE_DOMAIN = '.onrender.com'
     CSRF_TRUSTED_ORIGINS = [
         "https://score-board-front.onrender.com",
     ]
